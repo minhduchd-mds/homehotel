@@ -1,18 +1,8 @@
-
 var main = {};
+
+
 (function($){
     "use strict";
-    var $window = $(window),
-        $document = $(document),
-        $counter = $('.counter'),
-        $body = $('body');
-
-    $.fn.exists = function () {
-        return this.length > 0;
-    };
-    main.load =function(){
-        $('#loading').delay(40).fadeOut('slow');
-    };
     main.goToTop = function () {
         var $goToTop = $('#back-to-top');
 
@@ -36,26 +26,21 @@ var main = {};
                 $('#back-to-top').hide();
             }
         }
-
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("banner-text").style.top = "0";
+            } else {
+                document.getElementById("banner-text").style.top = "-75px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
     };
     main.counters = function () {
-        if ($counter.exists()) {
-            $counter.each(function () {
-                $('.timer').countTo();
-            });
-        }
-
-       setTimeout(function () {
-           $('#marketing').show(1000);
-           $('.closebtn').click(function () {
-               $('#marketing').hide();
-               // setTimeout(function () {
-               //     $('#marketing').show(1000);
-               // },30000);
-           });
-       },20000);
+        // $('.timer').countTo();
     };
-    main.menuBar = function (){
+    main.rightBar = function (){
         $('.right-bar').hide();
         $('.more-details').hide();
         $('#setting').on('click',function (e) {
@@ -95,7 +80,7 @@ var main = {};
             $('#dowload-app').show();
         },2000000);
     };
-    main.search = function(){
+    main.search =function(){
         $('#trigger-overlay').click(function () {
             $('#myOverlay').show();
             $('.closebtn').click(function () {
@@ -111,7 +96,8 @@ var main = {};
             e.preventDefault();
         })
     };
-    main.navHover = function(){
+
+    main.navhover = function(){
         $(".dropdown").hover(
             function () {
                 $('.dropdown-menu', this).stop(true, true).slideDown("fast");
@@ -130,17 +116,10 @@ var main = {};
     };
     main.action = function(){
 
-        $('#about .photo-360 .photo-content a,#about .photo-360 .img-item .click-icon div').click(function () {
+        $('#header .setting-mobiles-nav  .btn-group a, #header .setting-desktop-nav #navbarSupportedContent .navbar-nav li a').click(function () {
             $(this).addClass('active').siblings().removeClass('active');
-            var toggle =  $(this).attr('data-click');
-            var room =  $(this).attr('data-room');
-            $('.img-item[data-id = '+toggle+']').addClass('active').siblings().removeClass('active');
-            $('div[data-id = '+room+']').addClass('active').siblings().removeClass('active');
-            if(room == toggle){
-
-            }else {
-                // $('#about .photo-360 .click-icon div').removeClass('active');
-            }
+            var toggle =  $(this).attr('data-tab');
+            $('section[aria-labelledby = '+toggle+']').addClass('active').siblings().removeClass('active');
         });
         // language click
         $('.language-dost a').on('click',function () {
@@ -148,120 +127,340 @@ var main = {};
             $(this).addClass('active').siblings().removeClass('active');
             $('.language-icon .icon-l[data-language-icon = '+language+']').addClass('active').siblings().removeClass('active');
             $('#language h3[data-language-icon = '+language+']').addClass('active').siblings().removeClass('active');
+        })
+        //
+        $('#lettering .lettering-footer .btn-group button').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            var page =  $(this).attr('data-page');
+            $('#lettering div[id = '+page+']').addClass('active').siblings().removeClass('active');
         });
     };
-    main.contact = function () {
-        $('form.needs-validation').submit(function() {
-            var f = $(this).find('.form-group'),
-                ferror = false,
-                emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+    main.sliderC = function () {
+        $('iframe.size-238').css('width','238px !important');
 
-            f.children('input').each(function() { // run all inputs
+    };
+    var auidoArray = [];
+    var nameArray = [];
+    main.audio = function(){
 
-                var i = $(this); // current input
-                var rule = i.attr('data-rule');
 
-                if (rule !== undefined) {
-                    var ierror = false; // error flag for current input
-                    var pos = rule.indexOf(':', 0);
-                    if (pos >= 0) {
-                        var exp = rule.substr(pos + 1, rule.length);
-                        rule = rule.substr(0, pos);
-                    } else {
-                        rule = rule.substr(pos + 1, rule.length);
+        var audio = $('.hiragnana').find('.audio').find('audio').attr('data-audio');
+
+        $('.audio-play-auto').each(function () {
+            auidoArray.push($(this).attr('data-audio'));
+            nameArray.push($(this).attr('id'));
+        });
+
+        $('.hiragnana li a').click(function () {
+
+            var active = $(this).attr('data-name');
+            var audio = $('.hiragnana').find('.audio').find('audio').attr('data-audio');
+
+            var play = $(this).attr('data-play');
+            // lay ra danh sanh  audio
+            for(var i in auidoArray){
+                var sector = auidoArray[i];
+                (function(sec){
+                    if(active === sec){
+                        $('a[data-name = '+active+']').addClass('play');
+                        $('audio[data-audio = '+sec+']').addClass('play-auto'+sec).siblings().removeClass("play-auto" +sec);
+                        $('.play-auto'+sec).get(0).play();
                     }
-
-                    switch (rule) {
-                        case 'required':
-                            if (i.val() === '') {
-                                ferror = ierror = true;
-                            }
-                            break;
-
-                        case 'minlen':
-                            if (i.val().length < parseInt(exp)) {
-                                ferror = ierror = true;
-                            }
-                            break;
-
-                        case 'email':
-                            if (!emailExp.test(i.val())) {
-                                ferror = ierror = true;
-                            }
-                            break;
-
-                        case 'checked':
-                            if (!i.attr('checked')) {
-                                ferror = ierror = true;
-                            }
-                            break;
-
-                        case 'regexp':
-                            exp = new RegExp(exp);
-                            if (!exp.test(i.val())) {
-                                ferror = ierror = true;
-                            }
-                            break;
-                    }
-                    i.next('.validation').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
-                }
-            });
-            f.children('textarea').each(function() { // run all inputs
-
-                var i = $(this); // current input
-                var rule = i.attr('data-rule');
-
-                if (rule !== undefined) {
-                    var ierror = false; // error flag for current input
-                    var pos = rule.indexOf(':', 0);
-                    if (pos >= 0) {
-                        var exp = rule.substr(pos + 1, rule.length);
-                        rule = rule.substr(0, pos);
-                    } else {
-                        rule = rule.substr(pos + 1, rule.length);
-                    }
-
-                    switch (rule) {
-                        case 'required':
-                            if (i.val() === '') {
-                                ferror = ierror = true;
-                            }
-                            break;
-
-                        case 'minlen':
-                            if (i.val().length < parseInt(exp)) {
-                                ferror = ierror = true;
-                            }
-                            break;
-                    }
-                    i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
-                }
-            });
-            if (ferror) return false;
-            else var str = $(this).serialize();
-            var action = $(this).attr('action');
-            if( ! action ) {
-                action = '';
+                }(sector))
             }
-            $.ajax({
-                type: "POST",
-                url: action,
-                data: str,
-                success: function(msg) {
-                    // alert(msg);
-                    if (msg == 'OK') {
-                        $("#sendmessage").addClass("show");
-                        $("#errormessage").removeClass("show");
-                        $('.contactForm').find("input, textarea").val("");
-                    } else {
-                        $("#sendmessage").removeClass("show");
-                        $("#errormessage").addClass("show");
-                        $('#errormessage').html(msg);
-                    }
+        });
+
+
+    };
+
+    main.game = function(){
+        $("#vocabulary-game-message").keypress(function (e) {
+            if (e.keyCode == 13) {
+                var text = $('#vocabulary-game-message').val();
+                sessionStorage.setItem("textm",text);
+                // $('#vocabulary-game').html('<div class="float-left">'+text+' :</div> ');
+                if(text.length === 0){
+                    window.location.href = 'index.html';
+                }else {
 
                 }
+
+                $('#vocabulary-game-message').val("");
+            }
+        });
+        $.ajax({
+            url: "./json/test/testn1.json",
+            type: 'GET',
+            contentType: "json",
+            success: function (data) {
+                var conten ='';
+                $.each(data.hiragana, function (c, index) {
+                    // if(text == index){
+                    //   conten +='<div class="float-left">'+index+'</div>';
+                    // }
+                });
+                sessionStorage.clear();
+                $('.vocabulary-game-content').html(conten);
+            }
+        });
+        // var texts = sessionStorage.getItem("textm");
+
+    };
+
+    main.chat = function(){
+
+        var email = localStorage.getItem('email');
+        // chat message
+        var myDataRef = new Firebase("https://matrimony-chat.firebaseio.com/");
+        var count = 0;
+        // click
+        $('.sent-message-btn').click(function (e) {
+            var text = $("#messageInput").val();
+            var isValidtext = true;
+            if(text.length === 0){
+                isValidtext = false;
+                $('#messageInput').css("border",'1px solid #fe244b');
+                // window.location.href = 'login.html';
+            }else{
+
+                if(email !== null || email === 'undefined'){
+                    isValidtext = true;
+                    var imgchat =  sessionStorage.getItem('img-chat');
+
+                    var userm =  {
+                        id:1,
+                        name: email,
+                        image: imgchat,
+                        text: text,
+                        status: "1"
+                    };
+                    myDataRef.push(userm);
+                }else {
+                    window.location.href = 'login.html';
+                }
+            }
+            $("#messageInput").val("");
+        });
+        // enter
+        $("#messageInput").keypress(function (e){
+            if(e.keyCode == 13){ //Enter
+                var text = $("#messageInput").val();
+                var isValidtext = true;
+                if(text.length === 0){
+                    isValidtext = false;
+                    $('#messageInput').css("border",'1px solid #fe244b');
+                }else{
+                    if(email !== null || email === 'undefined'){
+                        isValidtext = true;
+                        var imgchat =  sessionStorage.getItem('img-chat');
+                        var userm =  {
+                            id:1,
+                            name: email,
+                            image: imgchat,
+                            text: text,
+                            status: "1"
+                        };
+                        myDataRef.push(userm);
+                    }else {
+                        window.location.href = 'login.html';
+                    }
+                }
+                $("#messageInput").val("");
+                sessionStorage.removeItem('img-chat');
+            }
+            count++;
+        });
+        //  array icon click
+        $('.show-icon').hide();
+        $('#icon-show-chat').click(function () {
+            $('.show-icon').toggle();
+        });
+        var emojis = ["😀","😁","😂","😃","😄","😅","😆","😉","😊","😋","😎","😍","😘","😗","😙","😚","☺️","🙂","🤗","😇","🤓","🤔","😐","😑","😶","🙄","😏","😣","😥","😮","🤐","😯","😪","😫","😴","😌","😛","😜","😝","😒","😓","😔","😕","🙃","🤑","😲","😷","🤒","🤕","☹️","🙁","😖","😞","😟","😤","😢","😭","😦","😧","😨","😩","😬","😰","😱","😳","😵","😡","😠","😈","👿","👹","👺","💀","☠️","👻","👽","👾","🤖","💩","😺","😸","😹","😻","😼","😽","🙀","😿","😾","🙈","🙉","🙊","👦"];
+        var html ='';
+        for(var k = 0; k < emojis.length; k++){
+            html+="<span class='click' data-icon='"+emojis[k]+"'>"+emojis[k]+"</span>";
+            $('.show-icon').html(html);
+            $('.click').click(function (e) {
+                var icon = $(this).data('icon');
+                $('#messageInput').val(function () {
+                    return this.value + icon;
+                });
+                e.preventDefault();
             });
-            return false;
+        }
+        // img
+        $('#file-img').on('change', function (e) {
+            var files = e.target;
+            var reader = new FileReader();
+            reader.onload = function () {
+                var dataURL = reader.result;
+                var imglist = '';
+
+                imglist +='<img src=" '+dataURL +' " class="img-fluid"><span class="close-all"></span>';
+                $('.show-images').html(imglist);
+                sessionStorage.setItem('img-chat', dataURL);
+            };
+            reader.readAsDataURL(files.files[0]);
+            if (!files.type.match('images.*')) {
+                var data = {
+                    message: 'You can only share images',
+                    timeout: 2000
+                };
+                return;
+            }
+        });
+        // remover img file
+        $('body').on('click','.close-all',function () {
+            var control = $("#file-img");
+            control.replaceWith( control.val('').clone( true ) );
+            $('.show-images').find('img').remove();
+            $('.show-images').find('.close-all').remove();
+            sessionStorage.removeItem('img-chat');
+        });
+        myDataRef.on('child_added', function (snapshot){
+            var message = snapshot.val();
+            viewchat(message.name, message.text, message.image, message.time, message.id);
+        });
+        function viewchat(name, text,image,time,id) {
+            var items ='';
+            var names = name.slice(0,9);
+
+            if(image !== 'undefined'){
+                $('.images').hide();
+            }else {
+                $('.images').show();
+            }
+            items +='<div class="chat float-left">\n' +
+                ' <div class="titles">'+names+'</div>' +
+                ' <div class="message">'+text+'</div>' +
+                ' <div class="images"><img src="'+image+'" class="img-fluid  shadow-lg" alt=""></div>' +
+                '</div>';
+            $('<div/>').prepend(items).appendTo($(".chat-content"));
+            $('.chat-content')[0].scrollTop = $('.chat-content')[0].scrollHeight;
+        }
+
+
+    };
+    var playList = [];
+    main.ajaxHome = function(){
+        $.ajax({
+            url: "./json/audio/audio.json",
+            type: 'GET',
+            contentType: "json",
+            success: function (data) {
+                var card ="";
+                $.each(data.dependencies, function (c, index) {
+                    var idpage = index.id;
+                    card +=' <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">\n' +
+                        '                        <a id="page"  href="javascript:void(0);" data-idpage="'+index.id+'">' +
+                        '<div     class="card bg-dark text-white mb-3">\n' +
+                        '                            <img src="'+index.images+'" class="card-img" alt="...">\n' +
+                        '                            <div class="card-img-overlay">\n' +
+                        '                                <h5 class="card-title">'+index.title+'</h5>\n' +
+                        '                            </div>\n' +
+                        '                        </div>\n'+
+                        '<i class="fa fa-play"></i>'+
+                        '</a>' +
+                        '                    </div>';
+                });
+                $('#product').html(card);
+
+            }
+        });
+        // click id to page
+
+        $('body').on('click','#page',function (e) {
+            // $('#banner-text').addClass('active').siblings();
+            $('.back-url').on('click',function () {
+                $('#product').show();
+                $('#product-m').hide();
+
+                $('#banner-text').removeClass('active');
+            });
+
+            //
+            // $('.play-list').each(function () {
+            //     var ac = $(this).attr('data-play-id');
+            //     playList.push(ac);
+            // });
+
+            // click  page play  product id
+            $('body').on('click', '.play-width > a', function () {
+                var ac = $(this).attr('data-play-id');
+                playList.push(ac);
+
+                for(var i in playList){
+                    var sector = playList[i];
+                    (function(sec){
+                        if(ac == sec){
+                            $('a[data-play-id = '+ac+']').addClass('play-a');
+                            $('audio[data-contron = '+sec+']').addClass('play'+sec).siblings().removeClass("play" +sec);
+                            $('.play'+sec).get(0).play();
+                        }
+                    }(sector));
+                }
+
+
+            });
+            var id = $(this).attr('data-idpage');
+            localStorage.setItem('id_page',id);
+
+            e.preventDefault();
+            window.location.href="page-id.html";
+        });
+
+
+
+        $.ajax({
+            url: "./json/audio/audio.json",
+            type: 'GET',
+            contentType: "json",
+            success: function (data) {
+                var card ="", list ="";
+                var  ids = localStorage.getItem('id_page');
+                $.each(data.dependencies, function (c, index) {
+                    var idpage = index.id;
+                    var url = index.url;
+
+                    if(idpage == ids){
+                        card +=' <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">\n' +
+                            '<div class="card card-body">\n' +
+                            '                        <div class="d-inline-block">\n' +
+                            '                            <img src="'+index.images+'" alt="" class="img-fluid mb-3">\n' +
+                            '                            <h5 class="card-title text-dark">'+index.text+'</h5>\n' +
+                            '                            <audio   controls  class="audio-play-auto">\n' +
+                            '                                <source src="'+index.mp3+'" >\n' +
+                            '                            </audio>\n' +
+                            '                        </div>\n' +
+                            '<h4 class="mt-3 mb-3 text-dark">Hộp thoại </h4>'+
+                            ' <div class="mb-3 mt-3">\n' +
+                            '                    <ul class="nav" id="dialog-box">\n' +
+                            '                        \n' +
+                            '                    </ul>\n' +
+                            '                </div>'+
+                            '                    </div>'+
+                            '      </div>';
+                        for (var i in url){
+
+                            list += '<li class="nav-item-user">'+url[i].user+'</li>\n' +
+                                '                <li class="nav-item">'+url[i].text+'</li>\n' +
+                                '                <li class="nav-item">'+url[i].textVn+'</li>\n' +
+                                '                <li class="play-width"><a href="javascript:void(0);" data-play-id="'+url[i].id +'"><i class="fa fa-play-circle-o"></i></a><div class="audio d-none">\n' +
+                                '                                        <audio  controls data-contron="'+url[i].id+'"  class="play-list">\n' +
+                                '                                            <source src="'+url[i].url+'" type="audio/ogg">\n' +
+                                '                                        </audio>\n' +
+                                '                                    </div></li>';
+
+                        }
+                    }
+                });
+                // su dung tren mot page
+                // $('#product').hide();
+                // $('#product-m').html(card).show();
+                $('#product-m').append(card);
+                $('#dialog-box').html(list);
+
+            }
         });
     };
     main.user = function(){
@@ -580,66 +779,20 @@ var main = {};
             event.preventDefault();
         });
     };
-    main.showScr = function(){
-        $('.venobox').venobox({
-            bgcolor: '',
-            overlayColor: 'rgba(6, 12, 34, 0.85)',
-            closeBackground: '',
-            closeColor: '#fff'
-        });
-    };
-    main.sliderLogo = function() {
-        $('.logo-trademark-slide').slick({
-            dots: false,
-            infinite: false,
-            autoplay: true,
-            autoplaySpeed: 1500,
-            speed: 300,
-            slidesToShow: 7,
-            slidesToScroll: 7,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                }
-            ]
-        });
-    };
 
-    $window.on('load', function(){
-        main.load();
-    });
-
-    $document.ready(function () {
+    $(document).ready(function () {
         new WOW().init();
-        main.counters();
+        // main.counters();
         main.goToTop();
-        main.menuBar();
+        main.rightBar();
         main.search();
-        main.navHover();
+        main.sliderC();
+        main.navhover();
         main.action();
-        main.contact();
-        main.showScr();
-        main.sliderLogo();
+        main.audio();
+        main.game();
+        main.chat();
+        main.ajaxHome();
         main.user();
 
     });
