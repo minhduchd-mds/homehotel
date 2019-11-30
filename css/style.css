@@ -1078,6 +1078,47 @@ select{
 /*=====================
         Form contact
 =======================*/
+#feedback{
+    height: 450px;
+    padding: 60px 0;
+    background-color: #6ab1bf;
+}
+#feedback .title-section-{
+    color: #fff;
+}
+#feedback .carousel-control-prev, .carousel-control-next {
+    background-image: none;
+    color: #f4511e;
+}
+
+#feedback #feedback-slider .carousel-indicators {
+    bottom: -45px;
+}
+
+#feedback #feedback-slider .carousel-indicators li.active {
+}
+#feedback #feedback-slider .carousel-item .m-auto {
+    width: 250px;
+}
+#feedback #feedback-slider .carousel-item  img{
+    height: 250px;
+    width: 250px;
+    border-radius: 8rem;
+}
+
+#feedback #feedback-slider .carousel-item .feedback-body h5{
+    color: #fff;
+    font-size: 23px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+#feedback #feedback-slider .carousel-item .feedback-body p {
+    font-style: normal;
+    color: #fff;
+}
 /*=====================
         Slider logo
 =======================*/
@@ -1621,6 +1662,15 @@ select{
     .slick-prev, .slick-next{
         display: none !important;
     }
+    #feedback{
+        height: 750px;
+    }
+    #feedback #feedback-slider .carousel-item .col- img{
+
+    }
+    #feedback .feedback-body{
+        margin-top: 1rem;
+    }
     #footer .footer-item{
         text-align: center;
     }
@@ -1673,6 +1723,15 @@ select{
     }
     #service .content- {
         margin-top: 15px;
+    }
+    #feedback{
+        height: 750px;
+    }
+    #feedback #feedback-slider .carousel-item .col- img{
+
+    }
+    #feedback .feedback-body{
+        margin-top: 1rem;
     }
     .slick-prev, .slick-next{
         display: none !important;

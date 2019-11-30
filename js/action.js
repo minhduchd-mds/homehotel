@@ -45,15 +45,15 @@ var main = {};
             });
         }
 
-       setTimeout(function () {
-           $('#marketing').show(1000);
-           $('.closebtn').click(function () {
-               $('#marketing').hide();
-               // setTimeout(function () {
-               //     $('#marketing').show(1000);
-               // },30000);
-           });
-       },20000);
+       // setTimeout(function () {
+       //     $('#marketing').show(1000);
+       //     $('.closebtn').click(function () {
+       //         $('#marketing').hide();
+       //         // setTimeout(function () {
+       //         //     $('#marketing').show(1000);
+       //         // },30000);
+       //     });
+       // },20000);
     };
     main.menuBar = function (){
         $('.right-bar').hide();
