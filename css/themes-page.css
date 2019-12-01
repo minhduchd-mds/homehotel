@@ -216,7 +216,11 @@ form a{
 }
 .left-bar .left-bar-ul .list-group li.list-group-item a {
     color: #333;
-    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.13em;
+    font-weight: 300;
+    line-height: 1.7em;
+    text-decoration: none;
 }
 .left-bar .left-bar-ul .list-group li.dropdown:before{
     content: ">";
@@ -224,7 +228,17 @@ form a{
     top: 19px;
     left: 10px;
 }
-
+.left-bar .left-bar-ul .list-group li.list-group-item a.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 26px;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
 /*=====================
     Slider
 =======================*/

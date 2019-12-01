@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/themes-page.css">
 
 </head>
-<body>
+<body data-spy="scroll" data-target="#menu" data-offset="0">
     <!--  load  -->
     <div id="loading" class="loading"></div>
     <!--Header-->
@@ -50,7 +50,7 @@
                             <a class="nav-link  text-uppercase active" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase"  aria-expanded="true" href="about.html">Giới Thiệu </a>
+                            <a class="nav-link text-uppercase"  aria-expanded="true" href="#about">Giới Thiệu </a>
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link text-uppercase" href="rooms.html">Review Nhà </a>
                             <div class="dropdown-hover">
@@ -816,25 +816,25 @@
                 <li class="list-group-item">
                     <a class="text-uppercase"  aria-expanded="true" href="about.html">Giới Thiệu </a>
                 </li>
-                <li class="list-group-item dropdown">
-                    <a class="nav-link text-uppercase" href="rooms.html">Review Nhà </a>
-                    <div class="dropdown-hover">
-                        <a href="" class="">Nhà chung  cư </a>
-                        <a href="" class="">Nhà biệt thự </a>
-                        <a href="" class="">Nhà liền kề </a>
-                        <a href="" class="">Nhà phố cổ </a>
-                    </div>
+                <li class="list-group-item">
+                    <a class="text-uppercase dropdown-toggle collapsed" data-toggle="collapse" aria-expanded="false"  href="#submenu">Review Nhà </a>
+                    <ul id="submenu" class="list-unstyled collapse">
+                        <li><a href="rooms.html" class="">Nhà chung  cư </a></li>
+                        <li><a href="rooms.html" class="">Nhà biệt thự </a></li>
+                        <li><a href="rooms.html" class="">Nhà liền kề </a></li>
+                        <li><a href="rooms.html" class="">Nhà phố cổ </a></li>
+                    </ul>
                 </li>
                 <li class="list-group-item"><a class=" text-uppercase" href="">Thư viện</a></li>
                 <li class="list-group-item"><a class="text-uppercase" href="shoping.html">Shopping</a></li>
                 <li class="list-group-item"><a class="text-uppercase" href="contacts.html">Liên hệ</a></li>
-                <li class="list-group-item dropdown"><a class="nav-link  text-uppercase icon-a" href="#"><i class="fa icon-vn"></i><span>Ngôn ngữ</span></a>
-                    <ul class="dropdown-hover nav">
-                        <li><a href="#"><img src="images/lang/DE.png" alt="de"> Deutsch</a></li>
-                        <li><a href="#"><img src="images/lang/GB.png" alt="gb"> English(UK)</a></li>
-                        <li><a href="#"><img src="images/lang/FR.png" alt="fr"> Français</a></li>
-                        <li><a href="#"><img src="images/lang/RO.png" alt="ro"> Română</a></li>
-                        <li><a href="#"><img src="images/lang/IT.png" alt="it"> Italiano</a></li>
+                <li class="list-group-item"><a class="text-uppercase icon-a dropdown-toggle collapsed" href="#lang" data-toggle="collapse" aria-expanded="false"><i class="fa icon-vn"></i><span>Ngôn ngữ</span></a>
+                    <ul id="lang" class="list-unstyled collapse">
+                        <li><a href="#lang"><img src="images/lang/DE.png" alt="de"> Deutsch</a></li>
+                        <li><a href="#lang"><img src="images/lang/GB.png" alt="gb"> English(UK)</a></li>
+                        <li><a href="#lang"><img src="images/lang/FR.png" alt="fr"> Français</a></li>
+                        <li><a href="#lang"><img src="images/lang/RO.png" alt="ro"> Română</a></li>
+                        <li><a href="#lang"><img src="images/lang/IT.png" alt="it"> Italiano</a></li>
                     </ul>
                 </li>
             </ul>
