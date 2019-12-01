@@ -56,22 +56,31 @@ var main = {};
        // },20000);
     };
     main.menuBar = function (){
-        $('.right-bar').hide();
+        $('.left-bar').hide();
         $('.more-details').hide();
-        $('#setting').on('click',function (e) {
-            $('.hoverlay').show();
-            $('.right-bar').css({
-                'right':'0',
+        $('#mobile-left-bar').on('click',function (e) {
+            $('.left-bar-hooray').show();
+            $('.left-bar').css({
+                'left':'0',
                 'display':'block'
+            });
+            $('.left-bar-hooray').click(function () {
+                $('.left-bar-hooray').hide();
+                $('.left-bar').css({
+                    'left':'-270px',
+                    'transition':'1s',
+                    'display':'none'
+                });
+
             });
             e.preventDefault();
         });
         $('.right-bar-toggle').on('click',function (e) {
             e.preventDefault();
-            $('#setting').removeClass('active');
-            $('.hoverlay').hide();
-            $('.right-bar').css({
-                'right':'-270px',
+            $('.left-bar-hooray').hide();
+            $('.left-bar').css({
+                'left':'-270px',
+                'transition':'1s',
                 'display':'none'
             });
         });
@@ -589,40 +598,7 @@ var main = {};
         });
     };
     main.sliderLogo = function() {
-        $('.logo-trademark-slide').slick({
-            dots: false,
-            infinite: false,
-            autoplay: true,
-            autoplaySpeed: 1500,
-            speed: 300,
-            slidesToShow: 7,
-            slidesToScroll: 7,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                }
-            ]
-        });
+
     };
 
     $window.on('load', function(){
@@ -639,7 +615,7 @@ var main = {};
         main.action();
         main.contact();
         main.showScr();
-        main.sliderLogo();
+        // main.sliderLogo();
         main.user();
 
     });

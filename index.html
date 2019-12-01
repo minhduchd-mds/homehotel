@@ -26,6 +26,7 @@
     <link type="text/css" rel="styleSheet" href="css/style.css" />
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/themes-page.css">
 
 </head>
 <body>
@@ -38,7 +39,7 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="images/icon/logo.png" alt="" class="img-fluid">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" id="mobile-left-bar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 <!--                    <span class="navbar-toggler-icon"></span>-->
                     <i class="material-icons">menu</i>
                 </button>
@@ -129,57 +130,52 @@
     <!--  From Appointment schedule  -->
     <div id="appointment-schedule">
         <div class="container">
-            <div class="appointment-schedule-body">
-                <form class="needs-validation" novalidate>
-                    <div class="form-group mr-3">
-                        <label for="check-day">Ngày đăng ký</label>
-                        <input type="date" id="check-day" class="form-control" placeholder="12/12/2019" value="2019-11-12">
-                    </div>
-                    <div class="form-group mr-3">
-                        <label for="check-day-price">Ngày thanh toán</label>
-                        <input type="date" id="check-day-price" class="form-control" placeholder="12/12/2019" value="2019-11-12">
-                    </div>
-                    <div class="form-group mr-3">
-                        <label for="check-city">Thành phố</label>
-                        <select class="custom-select" id="check-city" required>
-                            <option value="">Hà Nội </option>
-                            <option value="1">Hồ Chí Minh </option>
-                            <option value="2">Hải Phòng </option>
-                            <option value="3">Quảng Ninh</option>
-                        </select>
-                        <div class="invalid-feedback">Example invalid custom select feedback</div>
-                    </div>
-                    <div class="form-group mr-3">
-                        <label for="check-amount">Số lượng khách</label>
-                        <select class="custom-select" id="check-amount" required>
-                            <option value="">Số lượng</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                        <div class="invalid-feedback">Example invalid custom select feedback</div>
-                    </div>
-<!--                    <div class="form-group mr-3">-->
-<!--                        <label for="check-time">Thời gian</label>-->
-<!--                        <select class="custom-select"  required>-->
-<!--                            <option value="">12 : 00</option>-->
-<!--                            <option value="1">1 : 00</option>-->
-<!--                            <option value="2">8 : 00</option>-->
-<!--                            <option value="3">3 :00</option>-->
-<!--                        </select>-->
-<!--                        <div class="invalid-feedback">Example invalid custom select feedback</div>-->
-<!--                    </div>-->
-                    <div class="form-group mr-3">
-                        <input type="button" id="set" class="btn btn-primary p-3 mt-3"  value="Tìm kiếm ngay ">
-                    </div>
-                </form>
+            <div class="row justify-content-center appointment-schedule-body">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="form-group col-sm-12 col-md-3 col-xl-3 col-lg-3">
+                                <label for="check-day">Ngày đăng ký</label>
+                                <input type="date" id="check-day" class="form-control" placeholder="12/12/2019" value="2019-11-12">
+                            </div>
+                            <div class="form-group col-sm-12 col-md-3 col-xl-3 col-lg-3">
+                                <label for="check-day-price">Ngày thanh toán</label>
+                                <input type="date" id="check-day-price" class="form-control" placeholder="12/12/2019" value="2019-11-12">
+                            </div>
+                            <div class="form-group col-sm-12 col-md-2 col-xl-2 col-lg-2">
+                                <label for="check-city">Thành phố</label>
+                                <select class="custom-select" id="check-city" required>
+                                    <option value="">Hà Nội </option>
+                                    <option value="1">Hồ Chí Minh </option>
+                                    <option value="2">Hải Phòng </option>
+                                    <option value="3">Quảng Ninh</option>
+                                </select>
+                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-2 col-xl-2 col-lg-2">
+                                <label for="check-amount">Số lượng khách</label>
+                                <select class="custom-select" id="check-amount" required>
+                                    <option value="">Số lượng</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-2 col-xl-2 col-lg-2">
+                                <input type="button" id="set" class="btn btn-primary p-3 mt-3"  value="Tìm kiếm ngay ">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
@@ -188,7 +184,7 @@
     <section id="about" class="wow fadeInUpBig " data-out-duration="1000ms" data-out-delay="100ms">
         <div class="container">
             <div class="title-section">
-                <h1 class="title-section- mb-4">Tổng quan nội thất thiết kế trong nhà </h1>
+                <h2 class="title-section- mb-4">Tổng quan nội thất thiết kế trong nhà </h2>
                 <p>KHUYẾN MÃI</p>
             </div>
             <div class="row mt-3">
@@ -290,7 +286,7 @@
     <section id="location-city">
         <div class="container">
             <div class="title-section">
-                <h1 class="title-section- mb-4">Vị trí </h1>
+                <h2 class="title-section- mb-4">Vị trí </h2>
             </div>
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -399,7 +395,7 @@
      <section id="service" class="wow fadeInUpBig" data-out-duration="1000ms" data-out-delay="400ms">
          <div class="container">
              <div class="title-section">
-                 <h1 class="title-section- mb-4">Dịch vụ</h1>
+                 <h2 class="title-section- mb-4">Dịch vụ</h2>
                  <p> HẰNG NGÀY </p>
              </div>
 
@@ -511,7 +507,7 @@
         <div class="container">
             <div class="row justify-content-center text-white text-center">
                 <div class="col-md-8">
-                    <a href="#" data-toggle="modal" class="" data-target="#playerModal"><i class="video-icon"></i></a>
+                    <a class="venobox" data-vbtype="video" href="https://www.youtube.com/embed/ZP01ZvRIJP8" ><i class="video-icon"></i></a>
                     <h4 class="text-uppercase mb-3">Toàn cảnh nội thất căn hộ thự tế </h4>
                     <p>Chúng tôi luôn cố gắng lỗ lực không ngừng để vượt qua mọi khó khăn</p>
                 </div>
@@ -523,7 +519,7 @@
     <section id="news">
         <div class="container">
             <div class="title-section">
-                <h1 class="title-section- mb-4">Tin tức </h1>
+                <h2 class="title-section- mb-4">Tin tức </h2>
                 <p> HẰNG NGÀY </p>
             </div>
             <div class="row">
@@ -593,12 +589,11 @@
         </div>
     </section>
     <!-- End OUR NEWS section   -->
-
     <!--  Section feedback  -->
     <section id="feedback">
         <div class="container">
             <div class="title-section">
-                <h1 class="title-section- mb-4">Khách hàng đã nói gì về chúng tôi (Home)</h1>
+                <h2 class="title-section- mb-4">Khách hàng đã nói gì về chúng tôi (Home)</h2>
 
             </div>
             <div class="row">
@@ -662,12 +657,11 @@
             </div>
         </div>
     </section><!--  End section feedback  -->
-
     <!--  Section logo   -->
     <section id="logo-trademark">
         <div class="container">
             <div class="title-section">
-                <h1 class="title-section- mb-4">Thương hiệu đồng hành</h1>
+                <h2 class="title-section- mb-4">Thương hiệu đồng hành</h2>
                 <p> Luôn có những người bạn sát cách với chúng tôi  </p>
             </div>
             <div class="row">
@@ -691,51 +685,43 @@
     <!--  Section form  -->
     <section id="form-sent" class="wow fadeInUpBig" data-out-duration="1000ms" data-out-delay="500ms">
         <div class="container">
-            <div id="bg-lite" class="row pt-4 pb-3">
-                <div class="title-section">
-                    <h3 class="title-section-">Đăng ký nhận thông miễn phí</h3>
-                    <p class="p-0 text-light">------</p>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+            <div class="title-section">
+                <h2 class="title-section-">Đăng ký nhận thông miễn phí</h2>
+                <p class="p-0 text-light">------</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
                     <div class="form-contact">
                         <form class="needs-validation" novalidate>
                             <div class="form-row">
-                                <div class="col-12 col-sm-12 col-md-6 mb-3">
-                                    <div class="mb-3">
-                                        <label for="validationName"></label><input type="text" class="form-control" id="validationName" placeholder="Họ và tên" value="" required>
-                                        <div class="valid-feedback">
-                                            Nhập lại họ và tên
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="validationPhone"></label><input type="text" class="form-control" id="validationPhone" placeholder="Số điện thoại" value="" required>
-                                        <div class="valid-feedback">
-                                            Nhập lại số điện thoại
-                                        </div>
-                                    </div>
-
-                                    <div class="">
-                                        <label for="validationEmail"></label><input type="text" class="form-control" id="validationEmail" placeholder="Email" value="" required>
-                                        <div class="valid-feedback">
-                                            Nhập lại email
-                                        </div>
+                                <div class="form-group col-12 col-sm-12 col-md-6 mb-3">
+                                    <label for="validationName"></label><input type="text" class="form-control" id="validationName" placeholder="Họ và tên" value="" required>
+                                    <div class="valid-feedback">
+                                        Nhập lại họ và tên
                                     </div>
                                 </div>
-                                <div class="col-12 col-12 col-md-6">
-                                    <div class="">
-                                        <div class="input-group">
-                                            <label for="message"></label><textarea class="form-control input-message" id="message" placeholder="Tin nhắn" name="message" required=""></textarea>
-                                        </div>
+                                <div class="form-group col-12 col-sm-12 col-md-6 mb-3">
+                                    <label for="validationPhone"></label><input type="text" class="form-control" id="validationPhone" placeholder="Số điện thoại" value="" required>
+                                    <div class="valid-feedback">
+                                        Nhập lại số điện thoại
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 col-sm-12 col-md-12 mb-3">
+                                    <label for="validationEmail"></label><input type="text" class="form-control" id="validationEmail" placeholder="Email" value="" required>
+                                    <div class="valid-feedback">
+                                        Nhập lại email
+                                    </div>
+                                </div>
+                                <div class="form-group col-12 col-12 col-md-12">
+                                    <div class="input-group">
+                                        <label for="message"></label><textarea class="form-control input-message" id="message" placeholder="Tin nhắn" name="message" required=""></textarea>
+                                    </div>
+                                    <div class="text-center mt-5">
+                                        <a href="#" id="sent-form" class="btn btn-border">Đăng Ký</a>
                                     </div>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                    <div class="text-center mt-5">
-                        <a href="#" id="sent-form" class="btn btn-border">Đăng Ký</a>
                     </div>
                 </div>
             </div>
@@ -748,12 +734,12 @@
                 <div class="col-sm-12 col-12 col-md-3 col-lg-3 col-xl-3">
                     <div class="footer-item">
                         <h3 class="footer-title">Liên hệ </h3>
-                        <div class="navbar-footer-flex">
+                        <address class="navbar-footer-flex">
                             <p><a href="#">MINH DUC</a><br>
                                 <a href="mailto:dominhduchd10@gmail.com">mds@gamil.com</a><br>
-                                <a href="#">+84 092899999</a><br>
+                                <a href="tel:+84 092899999">+84 092899999</a><br>
                                 <a href="#">Ha Noi VIET NAM</a></p>
-                        </div>
+                        </address>
                     </div>
                 </div>
                 <div class="col-sm-12 col-col-12 col-md-2 col-lg-2 col-lg-2 col-xl-2">
@@ -816,26 +802,48 @@
             <a class="animated fadeInRight" href="javascript:void(0);" id="back-to-top"><i class="material-icons">arrow_upward</i></a>
         </div>
     </div>
-    <!--  Model  video -->
-    <div class="modal fade" id="playerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZP01ZvRIJP8"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+    <!--  Left bar  -->
+    <div class="left-bar-hooray"></div>
+    <div class="left-bar animated fadeInLeft">
+        <a href="javascript:void(0);" class="btn right-bar-toggle float-right text-black-50">
+            <i class="material-icons">close</i>
+        </a>
+        <div class="left-bar-ul">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a class=" text-uppercase active" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="list-group-item">
+                    <a class="text-uppercase"  aria-expanded="true" href="about.html">Giới Thiệu </a>
+                </li>
+                <li class="list-group-item dropdown">
+                    <a class="nav-link text-uppercase" href="rooms.html">Review Nhà </a>
+                    <div class="dropdown-hover">
+                        <a href="" class="">Nhà chung  cư </a>
+                        <a href="" class="">Nhà biệt thự </a>
+                        <a href="" class="">Nhà liền kề </a>
+                        <a href="" class="">Nhà phố cổ </a>
+                    </div>
+                </li>
+                <li class="list-group-item"><a class=" text-uppercase" href="">Thư viện</a></li>
+                <li class="list-group-item"><a class="text-uppercase" href="shoping.html">Shopping</a></li>
+                <li class="list-group-item"><a class="text-uppercase" href="contacts.html">Liên hệ</a></li>
+                <li class="list-group-item dropdown"><a class="nav-link  text-uppercase icon-a" href="#"><i class="fa icon-vn"></i><span>Ngôn ngữ</span></a>
+                    <ul class="dropdown-hover nav">
+                        <li><a href="#"><img src="images/lang/DE.png" alt="de"> Deutsch</a></li>
+                        <li><a href="#"><img src="images/lang/GB.png" alt="gb"> English(UK)</a></li>
+                        <li><a href="#"><img src="images/lang/FR.png" alt="fr"> Français</a></li>
+                        <li><a href="#"><img src="images/lang/RO.png" alt="ro"> Română</a></li>
+                        <li><a href="#"><img src="images/lang/IT.png" alt="it"> Italiano</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
     <!--  Model marketing   -->
     <div id="marketing" class="overlay">
         <i class="material-icons closebtn" title="Close Overlay">close</i>
         <div class="overlay-content text-center">
-
         </div>
     </div>
     <div class="position-fixed call">
@@ -853,5 +861,49 @@
 <script src="js/wow.min.js"></script>
 <script type="text/javascript" src="js/action.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
+    <script>
+        $(function () {
+            var nua = navigator.userAgent;
+            var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+            if (isAndroid) {
+                $('select.form-control').removeClass('form-control').css('width', '100%')
+            }
+            $('.logo-trademark-slide').slick({
+                dots: false,
+                infinite: false,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                speed: 300,
+                slidesToShow: 7,
+                slidesToScroll: 7,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: false
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
 </body>
 </html>

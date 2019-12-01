@@ -10,7 +10,8 @@ body{
     background-color: #fff;
 }
 h1,h2,h3,h4,h5,h6{
-    font-family: 'Lato', sans-serif;
+    /*font-family: 'Lato', sans-serif;*/
+    font-family: "Playfair Display";
 }
 p, h1, h2, h3, h4, h5, h6, a {
     font-weight: lighter;
@@ -79,7 +80,7 @@ p, h1, h2, h3, h4, h5, h6, a {
     border-bottom: 1px solid #fff;
     letter-spacing: 4px;
     line-height: 11px;
-    font-size: 11px;
+    font-size: 16px;
     padding: 15px 20px;
     border-radius: 0;
 }
@@ -1123,6 +1124,7 @@ select{
         Slider logo
 =======================*/
 #logo-trademark{
+    margin: 0 !important;
     padding: 60px 0;
     background-color: #f1f1f161;
 }
@@ -1455,19 +1457,33 @@ select{
 }
 #form-sent .form-contact{text-align: center;}
 #form-sent  .title-section{
+
     width: 100%;
 }
 #form-sent .row{
-    background: #1C1C1C url("../images/product/par-007.jpg")top  / cover;
+    /*background: #1C1C1C url("../images/product/par-007.jpg")top  / cover;*/
 }
-#form-sent  .title-section .title-section- {
-    color: #fff;
+#form-sent  .title-section p {
+    color: #7e7e7e !important;
+}
+#form-sent .form-control{
+    background-color: #f9f9f9;
+    border-width: 1px;
+    border-color: #f1f1f1;
+    border-radius: 1px;
+    border-style: solid;
+    padding: 10px 20px;
+    -webkit-appearance: none;
+    color: #7e7e7e;
 }
 #form-sent form .form-row .input-group, #form-sent form .form-row .input-group textarea{
     height: 146px;
 }
 #form-sent #sent-form{
     width: 100%;
+    color: #7e7e7e;
+    border-top: 1px solid #7e7e7e;
+    border-bottom: 1px solid #7e7e7e;
 }
 /*=====================
         Footer
@@ -1659,15 +1675,30 @@ select{
         height: 500px;
         width: auto;
     }
+    #appointment-schedule .appointment-schedule-body{
+        width: 100%;
+    }
+    #appointment-schedule .appointment-schedule-body form{
+        position: inherit;
+        display: inline-block;
+        width: 100%;
+        border: 0;
+        top: 30px;
+        padding: 0;
+    }
+    #appointment-schedule .appointment-schedule-body form .form-group{
+        margin-right: 0 !important;
+    }
+    #appointment-schedule .appointment-schedule-body form .form-group #set{
+        padding: .4rem !important;
+    }
     .slick-prev, .slick-next{
         display: none !important;
     }
     #feedback{
         height: 750px;
     }
-    #feedback #feedback-slider .carousel-item .col- img{
 
-    }
     #feedback .feedback-body{
         margin-top: 1rem;
     }
@@ -1710,6 +1741,8 @@ select{
         display: inline-block;
         width: 100%;
         border: 0;
+        top: 30px;
+        padding: 0;
     }
     #appointment-schedule .appointment-schedule-body form .form-group{
         margin-right: 0 !important;
@@ -1740,7 +1773,6 @@ select{
         text-align: center;
     }
 }
-
 @media only screen and (min-width: 768px) and (max-width: 1023px)
 {
 
@@ -1778,4 +1810,55 @@ select{
         display: none;
     }
 
+}
+@media only screen and (min-width: 1440px) and (max-width: 2560px)
+{
+    /*#appointment-schedule .appointment-schedule-body form::before{*/
+    /*    display: none;*/
+    /*}*/
+    /*#appointment-schedule .appointment-schedule-body{*/
+    /*    width: 100%;*/
+    /*}*/
+    /*#appointment-schedule .appointment-schedule-body form{*/
+    /*    width: 1440px;*/
+    /*}*/
+    /*#appointment-schedule .appointment-schedule-body .form-group{*/
+    /*    width: 33.33333%;*/
+    /*}*/
+    /*#appointment-schedule .appointment-schedule-body .form-group #set{*/
+    /*    width: 100%;*/
+    /*}*/
+    /*.container{*/
+    /*    max-width: 1960px;*/
+    /*}*/
+    /*.col-xl-8 {*/
+    /*    -ms-flex: 0 0 66.666667%;*/
+    /*    flex: 0 0 66.666667%;*/
+    /*    max-width: 66.666667%;*/
+    /*}*/
+    /*.col-xl-4 {*/
+    /*    -ms-flex: 0 0 33.333333%;*/
+    /*    flex: 0 0 33.333333%;*/
+    /*    max-width: 33.333333%;*/
+    /*}*/
+    /*.col-xl-12 {*/
+    /*    -ms-flex: 0 0 100%;*/
+    /*    flex: 0 0 100%;*/
+    /*    max-width: 100%;*/
+    /*}*/
+    /*.col-xl-2 {*/
+    /*    -ms-flex: 0 0 16.666667%;*/
+    /*    flex: 0 0 16.666667%;*/
+    /*    max-width: 16.666667%;*/
+    /*}*/
+    /*.col-xl-3 {*/
+    /*    -ms-flex: 0 0 25%;*/
+    /*    flex: 0 0 25%;*/
+    /*    max-width: 25%;*/
+    /*}*/
+    /*.col-xl-9 {*/
+    /*    -ms-flex: 0 0 75%;*/
+    /*    flex: 0 0 75%;*/
+    /*    max-width: 75%;*/
+    /*}*/
 }

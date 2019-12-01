@@ -163,9 +163,67 @@ form a{
     display: none;
 }
 /*=====================
-    Slider
+    Left Bar
 =======================*/
-
+.left-bar-hooray{
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    transition: 1s all ease-in-out;
+    -webkit-transition: all 1s ease-out;
+}
+.left-bar {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 24px 0 rgba(49,58,70,.1), 0 1px 0 0 rgba(49,58,70,.08);
+    box-shadow: 0 0 24px 0 rgba(49,58,70,.1), 0 1px 0 0 rgba(49,58,70,.08);
+    display: block;
+    position: fixed;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    width: 260px;
+    height: 100%;
+    z-index: 9999;
+    float: right!important;
+    left: -270px;
+    top: 0;
+    bottom: 0;
+}
+.hoverlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+.left-bar .right-bar-toggle{
+    z-index: 9999;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.left-bar .left-bar-ul{
+    padding-top: 3rem;
+}
+.left-bar .left-bar-ul .list-group li.list-group-item a {
+    color: #333;
+    font-weight: 400;
+}
+.left-bar .left-bar-ul .list-group li.dropdown:before{
+    content: ">";
+    position: absolute;
+    top: 19px;
+    left: 10px;
+}
 
 /*=====================
     Slider
