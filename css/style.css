@@ -983,6 +983,10 @@ select{
 }
 #service .service-item-product {
     text-align: center;
+    padding: 10px;
+    border: 3px solid transparent;
+    transition: 1s all ease-in-out;
+    cursor: default;
 }
 #service .service-item-product img{
 
@@ -1013,6 +1017,9 @@ select{
 }
 #service .service-item-product- , #service .service-item-product-piece, #service .content-{
     cursor: pointer;
+}
+#service .service-item-product:hover{
+    border: 3px solid ;
 }
 /*=====================
     Video - play
@@ -1706,6 +1713,21 @@ select{
         text-align: center;
     }
 
+    .quick.active {
+        width: 90px;
+        height: 90px;
+        top: -30px;
+        left: -30px;
+    }
+    .quick-b.active {
+        width: 60px;
+        height: 60px;
+    }
+    .quick-a.shake{
+        height: 35px;
+        width: 35px;
+    }
+
 
 }
 @media only screen and (min-width: 374px) and (max-width: 424px)
@@ -1771,6 +1793,22 @@ select{
     }
     #footer .footer-item{
         text-align: center;
+    }
+    .quick.active {
+        width: 90px;
+        height: 90px;
+        top: -28px;
+        left: -28px;
+    }
+    .quick-b.active {
+        width: 60px;
+        height: 60px;
+        top: -13px;
+        left: -13px;
+    }
+    .quick-a.shake{
+        height: 35px;
+        width: 35px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px)

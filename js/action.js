@@ -60,16 +60,13 @@ var main = {};
         $('.more-details').hide();
         $('#mobile-left-bar').on('click',function (e) {
             $('.left-bar-hooray').show();
-            $('.left-bar').css({
-                'left':'0',
-                'display':'block'
+            $('.left-bar').show(700).css({
+                'left':'0'
             });
             $('.left-bar-hooray').click(function () {
                 $('.left-bar-hooray').hide();
-                $('.left-bar').css({
-                    'left':'-270px',
-                    'transition':'1s',
-                    'display':'none'
+                $('.left-bar').hide(700).css({
+                    'left':'-270px'
                 });
 
             });
@@ -80,8 +77,6 @@ var main = {};
             $('.left-bar-hooray').hide();
             $('.left-bar').css({
                 'left':'-270px',
-                'transition':'1s',
-                'display':'none'
             });
         });
         $('#more-details').on('click',function (e) {
