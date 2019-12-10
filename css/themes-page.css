@@ -240,14 +240,30 @@ form a{
     list-style: none;
 }
 /*=====================
-    Slider
+    Contact
 =======================*/
+.accordion .card{
+    border: none;
+    border-radius: inherit;
+}
+.accordion .btn-link{
+    color: #333;
+    cursor: pointer;
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: left;
+}
+/*.accordion .card button #headingOne{*/
+/*    border-left:2px solid #6ab1bf !important;*/
+/*}*/
+.accordion .collapse:not(.show){
+    border-left:2px solid #6ab1bf;
+}
 
 
-
-/*=====================
-    Slider
-=======================*/
+    /*=====================
+        Slider
+    =======================*/
 
 
 

@@ -1015,6 +1015,9 @@ select{
     color: #fff;
     padding: 2rem;
 }
+#service .service-item-product- img,#service .service-item-product-piece img {
+    height: 241px;
+}
 #service .service-item-product- , #service .service-item-product-piece, #service .content-{
     cursor: pointer;
 }

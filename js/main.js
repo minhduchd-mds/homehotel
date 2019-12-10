@@ -794,6 +794,5 @@ var main = {};
         main.chat();
         main.ajaxHome();
         main.user();
-
     });
 })(jQuery);

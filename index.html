@@ -27,56 +27,12 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/icon.css">
     <link rel="stylesheet" href="css/themes-page.css">
-
 </head>
 <body data-spy="scroll" data-target="#menu" data-offset="0">
     <!--  load  -->
     <div id="loading" class="loading"></div>
     <!--Header-->
-    <header id="header">
-        <nav id="menu" class="navbar navbar-expand-sm">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/icon/logo.png" alt="" class="img-fluid">
-                </a>
-                <button class="navbar-toggler" type="button" id="mobile-left-bar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-<!--                    <span class="navbar-toggler-icon"></span>-->
-                    <i class="material-icons">menu</i>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav  navbar-link ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link  text-uppercase active" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase"  aria-expanded="true" href="#about">Giới Thiệu </a>
-                        </li>
-                        <li class="nav-item dropdown"><a class="nav-link text-uppercase" href="rooms.html">Review Nhà </a>
-                            <div class="dropdown-hover">
-                                <a href="" class="">Nhà chung  cư </a>
-                                <a href="" class="">Nhà biệt thự </a>
-                                <a href="" class="">Nhà liền kề </a>
-                                <a href="" class="">Nhà phố cổ </a>
-                            </div>
-                        </li>
-                        <li class="nav-item"><a class="nav-link text-uppercase" href="">Thư viện</a></li>
-                        <li class="nav-item"><a class="nav-link text-uppercase" href="shoping.html">Shopping</a></li>
-                        <li class="nav-item"><a class="nav-link  text-uppercase" href="contacts.html">Liên hệ</a></li>
-                        <li class="nav-item dropdown"><a class="nav-link  text-uppercase icon-a" href="#"><i class="fa icon-vn"></i><span>Ngôn ngữ</span></a>
-                            <ul class="dropdown-hover nav">
-                                <li><a href="#"><img src="images/lang/DE.png" alt="de"> Deutsch</a></li>
-                                <li><a href=""><img src="images/lang/GB.png" alt="gb"> English(UK)</a></li>
-                                <li><a href="#"><img src="images/lang/FR.png" alt="fr"> Français</a></li>
-                                <li><a href="#"><img src="images/lang/RO.png" alt="ro"> Română</a></li>
-                                <li><a href="#"><img src="images/lang/IT.png" alt="it"> Italiano</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header id="header"></header>
     <!--  Slider hero -->
     <div id="slider">
         <div class="bd-example position-relative overflow-hidden">
@@ -607,12 +563,12 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row">
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                         <div class="m-auto">
                                             <img src="images/vr-360/1.jpg" class="img-fluid" alt="...">
                                         </div>
                                     </div>
-                                    <div class="col-sm-8 col-md-8">
+                                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                         <div class="feedback-body">
                                             <h5 class="mt-0">Center-aligned media</h5>
                                             <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -622,12 +578,12 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="row">
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                         <div class="m-auto">
                                             <img src="images/vr-360/6.jpg" class="img-fluid" alt="...">
                                         </div>
                                     </div>
-                                    <div class="col-sm-8 col-md-8">
+                                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                         <div class="feedback-body">
                                             <h5 class="mt-0">Center-aligned media</h5>
                                             <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -637,12 +593,12 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="row">
-                                    <div class="col-sm-4 col-md-4">
+                                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                         <div class="m-auto">
                                             <img src="images/vr-360/7.jpg" class="img-fluid" alt="...">
                                         </div>
                                     </div>
-                                    <div class="col-sm-8 col-md-8">
+                                    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                         <div class="feedback-body">
                                             <h5 class="mt-0">Center-aligned media</h5>
                                             <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -729,68 +685,6 @@
     </section>
     <!--  End form section  -->
     <footer id="footer" class="wow fadeInUpBig animated" data-out-duration="1000ms" data-out-delay="1100ms" style="visibility: visible; animation-name: fadeInUpBig;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-12 col-md-3 col-lg-3 col-xl-3">
-                    <div class="footer-item">
-                        <h3 class="footer-title">Liên hệ </h3>
-                        <address class="navbar-footer-flex">
-                            <p><a href="#">MINH DUC</a><br>
-                                <a href="mailto:dominhduchd10@gmail.com">mds@gamil.com</a><br>
-                                <a href="tel:+84 092899999">+84 092899999</a><br>
-                                <a href="#">Ha Noi VIET NAM</a></p>
-                        </address>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-col-12 col-md-2 col-lg-2 col-lg-2 col-xl-2">
-                    <div class="footer-item">
-                        <h3 class="footer-title">Liên kết  </h3>
-                        <div class="navbar-footer-flex">
-                            <p><a href="#">Giới thiệu</a><br>
-                                <a href="#">Nhà thuê </a><br>
-                                <a href="#">Tin tức </a><br>
-                                <a href="#">Liên hệ </a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-col-12 col-md-7 col-lg-7 col-lg-7 col-xl-7">
-                    <div class="footer-item">
-                        <h3 class="footer-title">Theo dõi  </h3>
-                        <div class="email-footer-group">
-                            <form>
-                                <div class="input-group mb-4">
-                                    <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text" id="basic-addon2">Theo dõi ngay </span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-                                <h3 class="footer-title">Mạng xã hội  </h3>
-                                <a href=""><i class="ion ion-logo-facebook"></i></a>
-                                <a href=""><i class="ion ion-logo-google"></i></a>
-                                <a href=""><i class="ion ion-logo-twitch"></i></a>
-                                <a href=""><i class="ion ion-logo-flickr"></i></a>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-                                <h3 class="footer-title">Tìm chúng tôi cũng  </h3>
-                                <a href=""><i class="ion ion-logo-facebook"></i></a>
-                                <a href=""><i class="ion ion-logo-google"></i></a>
-                                <a href=""><i class="ion ion-logo-flickr"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                <p class="">Terms of Use · Privacy Policy</p>
-                <p class="">Copyright 2019</p>
-            </div>
-        </div>
     </footer>
     <!--  Setting  -->
     <div class="setting animated fadeInRight">
@@ -859,6 +753,8 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/counter.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="js/header/header.js"></script>
+<script src="js/footer/footer.js"></script>
 <script type="text/javascript" src="js/action.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
     <script>

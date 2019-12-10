@@ -1,0 +1,32 @@
+{
+  "name": "homehotel",
+  "version": "1.0.0",
+  "description": "Restful homehotel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhduchd-mds/homehotel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhduchd-mds/homehotel/issues"
+  },
+  "homepage": "https://github.com/minhduchd-mds/homehotel#readme",
+  "keywords": [
+    "Restful",
+    "API",
+    "Tutorial"
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13"
+  }
+}

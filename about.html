@@ -5,6 +5,19 @@
     <title>Title</title>
 </head>
 <body>
+<!--<iframe id="iframeId" src="https://gaigoi.xyz/khu-vuc/ha-noi" height="400px" width="400px"></iframe>-->
+<!--<script type="text/javascript" sr////////////?/.//////c="js/jquery-3.4.1.min.js"></script>-->
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+       var ifram =  $('#iframeId').contents();
 
+       var leadng = ifram.find('html body').find('#wrapper').length;
+
+       console.log(ifram);
+       console.log(leadng);
+    });
+</script>
 </body>
 </html>
