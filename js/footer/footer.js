@@ -6,7 +6,7 @@ $(document).ready(function () {
         '                        <h3 class="footer-title">Liên hệ </h3>\n' +
         '                        <address class="navbar-footer-flex">\n' +
         '                            <p><a href="#">MINH DUC</a><br>\n' +
-        '                                <a href="mailto:dominhduchd10@gmail.com">mds@gamil.com</a><br>\n' +
+        '                                <a href="#contact">mds@gamil.com</a><br>\n' +
         '                                <a href="tel:+84 092899999">+84 092899999</a><br>\n' +
         '                                <a href="#">Ha Noi VIET NAM</a></p>\n' +
         '                        </address>\n' +
